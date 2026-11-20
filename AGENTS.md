@@ -12,8 +12,10 @@ They back articles on https://docs.repsy.io; they are not Repsy product code, so
 
 ## Commands
 - Build: `./mvnw package`; resolving the dependency needs the deploy sample published and `repsy` credentials in `~/.m2/settings.xml` (do not run unasked). No tests or CI.
+- The wrapper pins Maven 3.6.0 (`.mvn/wrapper/maven-wrapper.properties`); `./mvnw package` is unverified here and may fail with the current compiler plugin.
 
 ## Conventions
-- Default branch `master`. Few commits; titles are short free-form sentences (no ticket prefix).
+- Default branch `master`. Few commits; titles are short free-form sentences, no ticket prefix; squash merges add ` (#N)`.
+- `.github/dependabot.yml` exists (Dependabot only, no CI).
 - Keep the sample minimal and in line with the docs article linked in `README.md`.
 - Never put real credentials or a real username in the files; the Repsy URL and credentials are placeholders or properties.
